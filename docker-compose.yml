@@ -1,0 +1,18 @@
+services:
+  rpa-worker:
+    build:
+      context: .
+      dockerfile: /RpaWorker/Dockerfile
+    container_name: rpa-worker
+    restart: unless-stopped
+
+  rpa-api:
+    build:
+      context: .
+      dockerfile: /RpaApi/Dockerfile
+    container_name: rpa-api
+    depends_on:
+      - rpa-worker
+    ports:
+      - "7034:80" 
+    restart: unless-stopped

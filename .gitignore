@@ -1,0 +1,80 @@
+# ===============================
+# Visual Studio / .NET
+# ===============================
+
+## Build Folders
+bin/
+obj/
+out/
+[Rr]elease/
+[Dd]ebug/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ncb
+*.VC.db
+*.VC.opendb
+
+## Rider / JetBrains IDEs
+.idea/
+*.sln.iml
+
+## Visual Studio Code
+.vscode/
+/.vs
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/packages/
+
+## Resharper
+_ReSharper*/
+*.DotSettings.user
+
+## DotCover
+*.dotCover
+
+## ASP.NET / IIS
+appsettings*.Local.json
+appsettings*.Development.json
+launchSettings.json
+
+## Logs
+*.log
+logs/
+*.tlg
+
+## Temporary Files
+*.tmp
+*.bak
+*.swp
+*.cache
+*.pid
+
+## Docker
+docker-compose.override.yml
+**/Dockerfile.*.local
+
+## Rider / JetBrains caches
+.idea/
+*.iws
+out/
+
+# ===============================
+# OS generated
+# ===============================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===============================
+# Others
+# ===============================
+*.vsix
+*.dbmdl
