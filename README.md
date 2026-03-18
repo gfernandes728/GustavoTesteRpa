@@ -52,12 +52,6 @@ cd GustavoTesteRpa
 dotnet restore
 ```
 
-4. Compile e rode a API + Worker:
-```bash
-dotnet run --project RpaApi
-dotnet run --project RpaWorker
-```
-
 O Worker será executado em background e a API estará disponível em http://localhost:7034/api/scrapping.
 
 ### 3. Como rodar pelo Docker
