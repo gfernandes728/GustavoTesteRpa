@@ -11,7 +11,7 @@ public class ScrapingService
 {
     private readonly List<Quote> _dataStore = [];
 
-    public async Task ScrapeAndSaveAsync()
+    public async Task<bool> ScrapeAndSaveAsync()
     {
         var response = await httpClient.GetAsync("https://api.exchangerate-api.com/v4/latest/USD");
 
@@ -19,21 +19,21 @@ public class ScrapingService
         if (!response.IsSuccessStatusCode)
         {
             logger.LogError($"Falha ao capturar valor da Api [https://api.exchangerate-api.com/v4/latest/USD] {DateTime.UtcNow}.");
-            return;
+            return false;
         }
 
         var json = await response.Content.ReadAsStringAsync();
         if (string.IsNullOrWhiteSpace(json))
         {
             logger.LogError($"Sem dados capturados da Api [https://api.exchangerate-api.com/v4/latest/USD] {DateTime.UtcNow}.");
-            return;
+            return false;
         }
 
         var value = GetValue(data: JsonDocument.Parse(json));
         if (!value.HasValue)
         {
             logger.LogError($"Sem valores de USD para BRL, capturados da Api [https://api.exchangerate-api.com/v4/latest/USD] {DateTime.UtcNow}.");
-            return;
+            return false;
         }
 
         logger.LogInformation($"Capturado Valor {value} - {DateTime.UtcNow}");
@@ -42,6 +42,8 @@ public class ScrapingService
 
         logger.LogInformation($"Adicionado Valor {value} - {DateTime.UtcNow}");
         logger.LogInformation($"Total capturado: {_dataStore.Count}");
+
+        return true;
     }
 
     public IEnumerable<Quote> GetAll() => _dataStore;

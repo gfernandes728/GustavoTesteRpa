@@ -6,6 +6,8 @@ O RpaWorker popula dados que podem ser consultados via API HTTP, permitindo moni
 
 Os dados pegos são os ultimos dados pegos a cada 5 minutos, pelo RpaWorker da ultima cotação, da moeda USD para BRL.
 
+Ocorrendo falha tentara pegar o dado no proximo minuto.
+
 ---
 
 ## 📁 Estrutura do Projeto

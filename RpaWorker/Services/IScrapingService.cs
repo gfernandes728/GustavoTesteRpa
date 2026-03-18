@@ -4,6 +4,6 @@ namespace RpaWorker.Services;
 
 public interface IScrapingService
 {
-    Task ScrapeAndSaveAsync();
+    Task<bool> ScrapeAndSaveAsync();
     IEnumerable<Quote> GetAll();
 }
