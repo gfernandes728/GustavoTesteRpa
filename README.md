@@ -52,8 +52,6 @@ cd GustavoTesteRpa
 dotnet restore
 ```
 
-O Worker será executado em background e a API estará disponível em http://localhost:7034/api/scrapping.
-
 ### 3. Como rodar pelo Docker
 
 1. Build dos containers:
