@@ -48,7 +48,7 @@ public class ScrapingService
 
     public IEnumerable<Quote> GetAll() => _dataStore;
 
-    private decimal? GetValue(JsonDocument? data)
+    private static decimal? GetValue(JsonDocument? data)
     {
         if  (
                 data is not null &&
