@@ -1,6 +1,7 @@
 ﻿# GustavoTesteRpa
 
 Este projeto consiste em uma **API RPA** para coleta de dados em background e um **RpaWorker** que realiza o scraping de forma contínua.  
+
 O RpaWorker popula dados que podem ser consultados via API HTTP, permitindo monitoramento e integração com outros sistemas.
 
 Os dados pegos são os ultimos dados pegos a cada 5 minutos, pelo RpaWorker da ultima cotação, da moeda USD para BRL.
@@ -71,6 +72,7 @@ O Worker irá rodar no container em background, preenchendo os dados que a API r
 ### 4. Acesso à API para verificação
 
 Endpoint: GET http://localhost:7034/api/scrapping
+
 Retorno esperado: lista de dados coletados pelo RpaWorker.
 
 Exemplo de teste usando curl:
@@ -85,20 +87,28 @@ Ou abra no navegador: http://localhost:7034/api/scrapping
 ### Observações:
 
 **Certifique-se de que o Docker e .NET 8 SDK estejam instalados para rodar o projeto via container.**
+
 **A API e o Worker compartilham dados usando um serviço singleton (ScrapingService) com IHttpClientFactory.**
 
 ---
 
 ### Tecnologias Utilizadas
 
-**.NET 8 / ASP.NET Core** – desenvolvimento da **RpaApi** e do **RpaWorker**.
-**C#** – linguagem principal do projeto.
-**HttpClientFactory** – para requisições HTTP dentro do **ScrapingService**.
-**BackgroundService / HostedService** – para execução contínua do **RpaWorker**.
-**Docker & Docker Compose** – para containerização da **RpaApi** e **RpaWorker**.
-**Swagger / OpenAPI** – documentação e teste da **RpaApi**.
-**Visual Studio / VS Code** – IDEs para desenvolvimento.
-**Git** – versionamento de código.
+- **.NET 8 / ASP.NET Core** – desenvolvimento da **RpaApi** e do **RpaWorker**.
+
+- **C#** – linguagem principal do projeto.
+
+- **HttpClientFactory** – para requisições HTTP dentro do **ScrapingService**.
+
+- **BackgroundService / HostedService** – para execução contínua do **RpaWorker**.
+
+- **Docker & Docker Compose** – para containerização da **RpaApi** e **RpaWorker**.
+
+- **Swagger / OpenAPI** – documentação e teste da **RpaApi**.
+
+- **Visual Studio / VS Code** – IDEs para desenvolvimento.
+
+- **Git** – versionamento de código.
 
 ---
 
